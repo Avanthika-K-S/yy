@@ -1,9 +1,10 @@
-/* General Styles */
+/* General Styles - Updated Background Gradient */
 body {
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom, #16122a, #0f0a20); /* Deeper purple gradient */
+    /* Updated background gradient: Violet to Green */
+    background: linear-gradient(to bottom, #4c00b0, #00a78e);
     color: #ffffff;
     min-height: 100vh;
     display: flex;
@@ -20,7 +21,7 @@ body {
     z-index: 1;
 }
 
-/* Enhanced background gradient effect */
+/* Enhanced background gradient effect - Subtle violet glow */
 .container::before {
     content: '';
     position: absolute;
@@ -28,33 +29,33 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(50% 50% at 0% 0%, rgba(118, 98, 252, 0.3), rgba(118, 98, 252, 0)); /* More subtle purple glow */
+    background: radial-gradient(50% 50% at 0% 0%, rgba(139, 0, 255, 0.2), rgba(139, 0, 255, 0)); /* Subtle violet glow */
     z-index: -1;
     pointer-events: none;
 }
 
 .card {
-    background-color: #1a1628; /* Darker purple-tinged background */
+    background-color: #1a1628; /* Keeping a dark background for contrast */
     border-radius: 8px;
     padding: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Deeper shadow */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
     margin-bottom: 20px;
     position: relative;
     z-index: 2;
-    border: 1px solid rgba(118, 98, 252, 0.1); /* Subtle border */
+    border: 1px solid rgba(139, 0, 255, 0.1); /* Subtle violet border */
 }
 
 h1, h2, h3 {
     color: #ffffff;
 }
 
-/* Header */
+/* Header - Subtle violet separator */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 0;
-    border-bottom: 1px solid #3a3a4a; /* Slightly purplish separator */
+    border-bottom: 1px solid #5e35b1; /* Subtle violet separator */
 }
 
 .logo {
@@ -87,11 +88,12 @@ header {
     color: #bbbbbb;
 }
 
+/* User Avatar - Violet background */
 .user-avatar {
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background-color: #7662fc; /* Purple avatar background */
+    background-color: #8b00ff; /* Violet avatar background */
     color: #ffffff;
     display: flex;
     justify-content: center;
@@ -115,7 +117,7 @@ header {
 }
 
 .demo-tag {
-    background-color: #f46a6a;
+    background-color: #f46a6a; /* Keeping red for demo tag */
     color: #ffffff;
     padding: 2px 8px;
     border-radius: 4px;
@@ -130,8 +132,9 @@ header {
     flex-grow: 1;
 }
 
+/* View Docs Button - Violet */
 .view-docs {
-    background-color: #7662fc; /* Purple button */
+    background-color: #8b00ff; /* Violet button */
     color: #ffffff;
     border: none;
     border-radius: 4px;
@@ -145,16 +148,16 @@ header {
 }
 
 .view-docs:hover {
-    background-color: #6553e0; /* Darker purple on hover */
+    background-color: #7a00e0; /* Darker violet on hover */
 }
 
-/* Navigation */
+/* Navigation - Subtle violet bottom border for active item */
 .nav {
     display: flex;
     gap: 15px;
     margin-top: 20px;
     padding-bottom: 15px;
-    border-bottom: 1px solid #3a3a4a;
+    border-bottom: 1px solid #5e35b1;
     overflow-x: auto;
 }
 
@@ -172,14 +175,14 @@ header {
 }
 
 .nav-item.active {
-    color: #7662fc; /* Purple for active item */
+    color: #8b00ff; /* Violet for active item */
     font-weight: 600;
-    border-bottom: 2px solid #7662fc;
+    border-bottom: 2px solid #8b00ff;
     padding-bottom: 3px;
 }
 
 .nav-separator {
-    color: #3a3a4a;
+    color: #5e35b1;
 }
 
 /* Dashboard Layout */
@@ -232,15 +235,16 @@ header {
     flex: 1;
     text-align: center;
     padding: 10px;
-    background-color: #241c3c; /* Darker purple background */
+    background-color: #1c2824; /* Dark green-tinged background */
     border-radius: 4px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Guest Counts - Violet */
 .guest-counts .count {
     font-size: 1.8em;
     font-weight: 700;
-    color: #7662fc; /* Purple for counts */
+    color: #8b00ff; /* Violet for counts */
     display: block;
     margin-bottom: 5px;
 }
@@ -257,17 +261,17 @@ header {
 }
 
 .shortlisted .count {
-    color: #34c38f;
+    color: #34c38f; /* Keeping green for shortlisted */
 }
 
 .unclaimed .count {
-    color: #f46a6a;
+    color: #f46a6a; /* Keeping red for unclaimed */
 }
 
-/* Progress Bar */
+/* Progress Bar - Violet to Green */
 .progress-container {
     width: 100%;
-    background-color: #241c3c;
+    background-color: #1c2824;
     border-radius: 5px;
     height: 8px;
     overflow: hidden;
@@ -276,7 +280,7 @@ header {
 
 .progress-bar {
     height: 100%;
-    background: linear-gradient(to right, #7662fc, #a991ff); /* Purple gradient */
+    background: linear-gradient(to right, #8b00ff, #34c38f); /* Violet to Green gradient */
     border-radius: 5px;
 }
 
@@ -289,7 +293,7 @@ header {
 }
 
 .ticket-item {
-    background-color: #241c3c;
+    background-color: #1c2824;
     border-radius: 4px;
     padding: 10px;
     text-align: center;
@@ -298,17 +302,18 @@ header {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+/* Ticket Item Count - Violet */
 .ticket-item .ticket-count {
     display: block;
     font-size: 1.2em;
     font-weight: bold;
-    color: #7662fc; /* Purple count color */
+    color: #8b00ff; /* Violet count color */
     margin-bottom: 5px;
 }
 
 .ticket-graph-placeholder {
     grid-column: 1 / -1;
-    background-color: #241c3c;
+    background-color: #1c2824;
     border-radius: 4px;
     padding: 15px;
     height: 250px;
@@ -333,8 +338,34 @@ header {
     gap: 10px;
 }
 
+@media (min-width: 769px) {
+    .guest-actions {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .action-button {
+        flex: 0 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .guest-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .action-button {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Guest Actions Buttons - Violet */
 .action-button {
-    background-color: #241c3c;
+    background-color: #1c2824;
     color: #ffffff;
     border: none;
     border-radius: 4px;
@@ -350,12 +381,12 @@ header {
 }
 
 .action-button:hover {
-    background-color: #2f2449; /* Slightly lighter purple on hover */
+    background-color: #233630; /* Slightly lighter green-tinged on hover */
 }
 
 .action-button i {
     font-size: 1.2em;
-    color: #7662fc; /* Purple icon color */
+    color: #8b00ff; /* Violet icon color */
 }
 
 /* Guests List Section */
@@ -372,9 +403,9 @@ header {
 .search-bar input {
     width: 100%;
     padding: 10px 10px 10px 35px;
-    border: 1px solid #3a3a4a;
+    border: 1px solid #5e35b1;
     border-radius: 4px;
-    background-color: #241c3c;
+    background-color: #1c2824;
     color: #ffffff;
     font-size: 0.9em;
     box-sizing: border-box;
@@ -416,7 +447,7 @@ header {
 }
 
 .dropdown button {
-    background-color: #241c3c;
+    background-color: #1c2824;
     color: #ffffff;
     border: none;
     border-radius: 4px;
@@ -431,7 +462,7 @@ header {
 }
 
 .dropdown button:hover {
-    background-color: #2f2449;
+    background-color: #233630;
 }
 
 .dropdown button i {
@@ -453,27 +484,27 @@ header {
 .guests-table td {
     padding: 12px;
     text-align: left;
-    border-bottom: 1px solid #3a3a4a;
+    border-bottom: 1px solid #5e35b1;
     color: #ffffff;
 }
 
 .guests-table th {
-    background-color: #241c3c;
+    background-color: #1c2824;
     font-weight: 600;
     font-size: 0.9em;
     color: #bbbbbb;
 }
 
 .guests-table tbody tr:nth-child(odd) {
-    background-color: #1a1628;
+    background-color: #1a1628; /* Keeping a dark background */
 }
 
 .guests-table tbody tr:nth-child(even) {
-    background-color: #241c3c;
+    background-color: #1c2824; /* Dark green-tinged */
 }
 
 .guests-table tbody tr:hover {
-    background-color: #2f2449;
+    background-color: #233630;
 }
 
 .guests-table td.username-cell span,
@@ -481,10 +512,11 @@ header {
     opacity: 0.7;
 }
 
+/* Guests Table Actions - Violet */
 .guests-table td.actions button {
     background: none;
     border: none;
-    color: #7662fc; /* Purple action icon color */
+    color: #8b00ff; /* Violet action icon color */
     cursor: pointer;
     padding: 0 5px;
     font-size: 1.1em;
@@ -492,7 +524,7 @@ header {
 }
 
 .guests-table td.actions button:hover {
-    color: #9985ff; /* Lighter purple on hover */
+    color: #a945ff; /* Lighter violet on hover */
 }
 
 /* Pagination */
@@ -510,134 +542,4 @@ header {
 .page-navigation {
     display: flex;
     align-items: center;
-    gap: 10px;
-}
-
-.pagination .page-button {
-    background-color: #241c3c;
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    padding: 5px 10px;
-    cursor: pointer;
-    font-size: 0.9em;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.pagination .page-button:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-}
-
-.pagination .page-button:hover:not(:disabled) {
-    background-color: #2f2449;
-}
-
-/* Footer */
-footer {
-    margin-top: 40px;
-    padding: 20px;
-    text-align: center;
-    color: #bbbbbb;
-    font-size: 0.9em;
-}
-
-.footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-}
-
-.hoomans-info {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.hoomans-logo {
-    width: 30px;
-    height: 30px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.hoomans-info span {
-    color: #bbbbbb;
-}
-
-.social-icons {
-    display: flex;
-    gap: 15px;
-    font-size: 1.4em;
-}
-
-.social-icons a {
-    color: #bbbbbb;
-    transition: color 0.3s ease;
-}
-
-.social-icons a:hover {
-    color: #ffffff;
-}
-
-/* Responsive adjustments */
-@media (max-width: 600px) {
-    .event-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .event-title {
-        margin-top: 10px;
-        font-size: 1.5em;
-    }
-
-    .view-docs {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .nav {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px 15px;
-    }
-
-    .nav-separator {
-        display: none;
-    }
-
-    .table-controls {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-    }
-
-    .filter-dropdowns {
-        width: 100%;
-        flex-direction: column;
-    }
-
-    .dropdown button {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .pagination {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-    }
-
-    .page-navigation {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .footer-content {
-        flex-direction: column;
-    }
-}
+    gap: 10px
