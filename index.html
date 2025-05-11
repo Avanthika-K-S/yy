@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MakeMyPass - Event Management</title>
+    <link rel="stylesheet" href="mellowship.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+</head>
+<body>
+    <div class="main-logo-hidden">
+        <img src="https://makemypass.com/assets/makemypass-logo-BQEssInq.png" alt="makemypass brand logo">
+        <span>MakeMyPass</span>
+    </div>
+    <div class="container">
+        <header>
+            <div class="logo">
+                 <div class="logo-icon" style="background-image: url('data:image/webp;base64,UklGRkQBAABXRUJQVlA4WAoAAAAQAAAAOgAAGAAAQUxQSO4AAAABcFBba958EpAQCUjAweJgcdA6GA5WB9RB5gAJkRAJkbD/LWwGImICgOLN3WxTLUWEU8Lvnq4zR2/uZtvxs5RYcimqm5lvCaBraKZiZu69j+vXncAhg5Cv8xUScs1UAyyoARLgQVfGOQQl4oKlzrMMwAMG533aiuc94ALWWY6XNWCQ8Cx7kaVAilTHpPbELaJT8VnXEwC/RiqQp11dKaYC8GnXK8esAI8AaSFnbFIDDhqyUko9glqE7BdoQAJkUTVz996/Wom4zVN8TYlFcllUzRwAyjej9+bVTAXxtJuZailFJCXCbzP+dT3y+jfRVlQ4IDAAAAAwAwCdASo7ABkAPoU0lEelIyIhM+gAoBCJaQAAmoEJS5MAAP75WInu///zWAAAAAA=');"></div>
+                <div class="logo-text">MakeMyPass</div>
+            </div>
+            <div class="user-info">
+                <span>Hi, adriansmith@admin42</span>
+                <div class="user-avatar">👤</div>
+            </div>
+        </header>
+        <div class="event-header">
+            <div class="back-button">←</div>
+            <div class="demo-tag">DEMO</div>
+            <div class="event-title">Paradox Productions Meet-Up</div>
+            <button class="view-docs">
+                 <i class="fas fa-book-open"></i> <span>View Docs</span>
+            </button>
+        </div>
+         <div class="nav">
+            <a href="#" class="nav-item">Overview</a>
+            <a href="#" class="nav-item">Insights</a>
+            <a href="#" class="nav-item active">Guests</a>
+            <span class="nav-separator">|</span>
+            <a href="#" class="nav-item">Event Page</a>
+            <a href="#" class="nav-item">Form Builder</a>
+            <span class="nav-separator">|</span>
+            <a href="#" class="nav-item">Scan QR</a>
+            <a href="#" class="nav-item">In Event</a>
+            <span class="nav-separator">|</span>
+            <a href="#" class="nav-item">Logs</a>
+            <a href="#" class="nav-item">Finance</a>
+             <span class="nav-separator">|</span>
+            <a href="#" class="nav-item">Post Event</a>
+             <span class="nav-separator">|</span>
+            <a href="#" class="nav-item">Child Events</a>
+        </div>
+        <div class="dashboard">
+            <div class="at-a-glance">
+                <div class="glance-header">
+                    <h3>At a Glance</h3>
+                     <div class="time-info">Last Registered 1st May at 7:42 PM</div>
+                </div>
+
+                <div class="guest-counts"> <div class="unique-guests">
+                        <span class="count">80</span> <span class="label">unique guests</span>
+                    </div>
+                    <div class="shortlisted-unclaimed">
+                        <span class="shortlisted"><span class="count">59</span> <span class="label">shortlisted</span></span> | <span class="unclaimed"><span class="count">11</span> <span class="label">unclaimed</span></span>
+                    </div>
+                </div>
+
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: 73.75%;"></div>
+                </div>
+
+                <div class="ticket-summary">
+                    <div class="ticket-item"><span class="ticket-count">(280)</span> Special Ticket</div>
+                    <div class="ticket-item"><span class="ticket-count">(3)</span> Demo Paid Ticket</div>
+                    <div class="ticket-item"><span class="ticket-count">(4)</span> Hackathon</div>
+                    <div class="ticket-item"><span class="ticket-count">(50)</span> New Ticket</div>
+                    <div class="ticket-graph-placeholder">
+                        <canvas id="ticketChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="guest-actions">
+                 <button class="action-button dropped">
+                    <i class="fas fa-user-times"></i>
+                    <span>Dropped Users</span>
+                </button>
+                <button class="action-button blacklisted">
+                    <i class="fas fa-user-slash"></i>
+                    <span>Blacklisted Users</span>
+                </button>
+                <button class="action-button export">
+                    <i class="fas fa-download"></i>
+                    <span>Export Data</span>
+                </button>
+                <button class="action-button add">
+                    <i class="fas fa-user-plus"></i>
+                    <span>Add Guest</span>
+                </button>
+            </div>
+            <div class="guests-list-section">
+                <div class="guests-list-header">
+                    <h3>Guests List</h3>
+                    </div>
+                <div class="search-bar">
+                    <div class="search-icon"></div>
+                    <input type="text" placeholder="Search">
+                </div>
+                <div class="table-controls">
+                    <div class="recent-guests-count">Recent Guests(30)</div>
+                    <div class="filter-dropdowns">
+                        <div class="dropdown">
+                            <button>Select Multiple</button>
+                        </div>
+                        <div class="dropdown">
+                            <button>Checked In <svg viewBox="0 0 320 512" style="width: 0.75em; margin-left: 0.25em;"><path fill="currentColor" d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"></path></svg></button>
+                        </div>
+                        <div class="dropdown">
+                            <button>Approval Status <svg viewBox="0 0 320 512" style="width: 0.75em; margin-left: 0.25em;"><path fill="currentColor" d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"></path></svg></button>
+                        </div>
+                        <div class="dropdown">
+                            <button>Registration Status <svg viewBox="0 0 320 512" style="width: 0.75em; margin-left: 0.25em;"><path fill="currentColor" d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"></path></svg></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="guests-table-wrapper">
+                    <table class="guests-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Username</th>
+                                <th>Last Active</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="guestsTableBody">
+                            <tr>
+                                <td>Ananthu M P</td>
+                                <td class="username-cell"><span>@AnanthuTheBoss</span></td> <td class="last-active-cell">1 week ago</td>
+                                <td class="actions">
+                                     <button class="action-icon"><i class="fas fa-pencil-alt"></i></button>
+                                    <button class="action-icon"><i class="fas fa-square-check"></i></button>
+                                    <button class="action-icon"><i class="fas fa-dollar-sign"></i></button>
+                                    <button class="action-icon"><i class="fas fa-ticket-alt"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Ara.Aravind S</td>
+                                <td class="username-cell"><span>Aravind23</span></td> <td class="last-active-cell">1 week ago</td>
+                                <td class="actions">
+                                     <button class="action-icon"><i class="fas fa-pencil-alt"></i></button>
+                                    <button class="action-icon"><i class="fas fa-square-check"></i></button>
+                                    <button class="action-icon"><i class="fas fa-dollar-sign"></i></button>
+                                    <button class="action-icon"><i class="fas fa-ticket-alt"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Ananthu M P</td>
+                                <td class="username-cell"><span>@ananthump222</span></td> <td class="last-active-cell">2 weeks ago</td>
+                                <td class="actions">
+                                     <button class="action-icon"><i class="fas fa-pencil-alt"></i></button>
+                                    <button class="action-icon"><i class="fas fa-square-check"></i></button>
+                                    <button class="action-icon"><i class="fas fa-dollar-sign"></i></button>
+                                    <button class="action-icon"><i class="fas fa-ticket-alt"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Ananthu M P</td>
+                                <td class="username-cell"><span>@ananthumptest</span></td> <td class="last-active-cell">3 weeks ago</td>
+                                <td class="actions">
+                                     <button class="action-icon"><i class="fas fa-pencil-alt"></i></button>
+                                    <button class="action-icon"><i class="fas fa-square-check"></i></button>
+                                    <button class="action-icon"><i class="fas fa-dollar-sign"></i></button>
+                                    <button class="action-icon"><i class="fas fa-ticket-alt"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Alefiya Anoop</td>
+                                <td class="username-cell"><span>@alefiyaanoop</span></td> <td class="last-active-cell">4 weeks ago</td>
+                                <td class="actions">
+                                     <button class="action-icon"><i class="fas fa-pencil-alt"></i></button>
+                                    <button class="action-icon"><i class="fas fa-square-check"></i></button>
+                                    <button class="action-icon"><i class="fas fa-dollar-sign"></i></button>
+                                    <button class="action-icon"><i class="fas fa-ticket-alt"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Alefiya Anoop</td>
+                                <td class="username-cell"><span>AlefiyaAnoop</span></td> <td class="last-active-cell">4 weeks ago</td>
+                                <td class="actions">
+                                     <button class="action-icon"><i class="fas fa-pencil-alt"></i></button>
+                                    <button class="action-icon"><i class="fas fa-square-check"></i></button>
+                                    <button class="action-icon"><i class="fas fa-dollar-sign"></i></button>
+                                    <button class="action-icon"><i class="fas fa-ticket-alt"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Admin Appz</td>
+                                <td class="username-cell"><span>AdminAppz</span></td> <td class="last-active-cell">4 weeks ago</td>
+                                <td class="actions">
+                                     <button class="action-icon"><i class="fas fa-pencil-alt"></i></button>
+                                    <button class="action-icon"><i class="fas fa-square-check"></i></button>
+                                    <button class="action-icon"><i class="fas fa-dollar-sign"></i></button>
+                                    <button class="action-icon"><i class="fas fa-ticket-alt"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Ananthu M P</td>
+                                <td class="username-cell"><span>ananthuaravindmp</span></td> <td class="last-active-cell">4 weeks ago</td>
+                                <td class="actions">
+                                     <button class="action-icon"><i class="fas fa-pencil-alt"></i></button>
+                                    <button class="action-icon"><i class="fas fa-square-check"></i></button>
+                                    <button class="action-icon"><i class="fas fa-dollar-sign"></i></button>
+                                    <button class="action-icon"><i class="fas fa-ticket-alt"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="pagination">
+                    <div class="records-count">69 Records</div>
+                    <div class="per-page">Per Page: 30</div>
+                    <div class="page-navigation">
+                        <span>1 of 3</span>
+                        <button class="page-button prev">←</button>
+                        <button class="page-button next">→</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="footer-content">
+                <div class="hoomans-info">
+                    <logo href="https://www.hoomansproject.com/dark/logo.svg"></logo>
+                </body>
+                </html>
