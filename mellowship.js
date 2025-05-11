@@ -1,55 +1,37 @@
-// Get the canvas element
-const ctx = document.getElementById('ticketChart').getContext('2d');
+document.addEventListener('DOMContentLoaded', function() {
+    const ticketCountsElements = document.querySelectorAll('.ticket-summary .ticket-item .ticket-count');
+    const progressBar = document.querySelector('.progress-bar');
 
-// Create the chart
-const ticketChart = new Chart(ctx, {
-    type: 'doughnut',
-    data: {
-        labels: ['Special Ticket', 'Demo Paid Ticket', 'Hackathon', 'New Ticket'],
-        datasets: [{
-            label: 'Ticket Sales',
-            data: [280, 3, 4, 50], // Your data
-            backgroundColor: [
-                '#7662fc', // Special Ticket - Purple
-                '#a991ff', // Demo Paid Ticket - Lighter purple
-                '#34c38f', // Hackathon - Green
-                '#f46a6a'  // New Ticket - Red
-            ],
-            borderColor: [
-                '#1a1628', // Border color matching card background
-                '#1a1628',
-                '#1a1628',
-                '#1a1628'
-            ],
-            borderWidth: 2
-        }]
-    },
-    options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        cutout: '70%', // Makes the doughnut hole larger
-        plugins: {
-            legend: {
-                position: 'bottom',
-                labels: {
-                    color: '#bbbbbb', // Color for legend text
-                    padding: 15,
-                    font: {
-                        size: 12
-                    }
-                }
-            },
-            title: {
-                display: true,
-                text: 'Ticket Distribution',
-                color: '#ffffff', // Title color
-                font: {
-                    size: 16
-                },
-                padding: {
-                    bottom: 20
-                }
+    if (ticketCountsElements && progressBar) {
+        let totalTickets = 0;
+        const ticketCounts = [];
+        const colors = ['#9c27b0', '#aed581', '#fdd835', '#f44336']; // Example violet, green, yellow, red
+
+        ticketCountsElements.forEach(element => {
+            const count = parseInt(element.textContent.replace('(', '').replace(')', ''));
+            totalTickets += count;
+            ticketCounts.push(count);
+        });
+
+        if (totalTickets > 0 && ticketCounts.length === colors.length) {
+            let gradient = 'linear-gradient(to right';
+            let percentage = 0;
+
+            for (let i = 0; i < ticketCounts.length; i++) {
+                const proportion = (ticketCounts[i] / totalTickets) * 100;
+                const nextPercentage = percentage + proportion;
+                gradient += `, ${colors[i]} ${percentage}% ${nextPercentage}%`;
+                percentage = nextPercentage;
             }
+
+            gradient += ')';
+            progressBar.style.background = gradient;
+        } else if (totalTickets > 0) {
+            // If the number of counts doesn't match colors, apply a single color or a default gradient
+            progressBar.style.background = '#9c27b0'; // Default violet
+        } else {
+            progressBar.style.width = '0%'; // No tickets
+            progressBar.style.background = '#ccc'; // Grey for no progress
         }
     }
 });
